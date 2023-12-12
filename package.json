@@ -12,8 +12,7 @@
     "clean": "rimraf ./app/generated",
     "generate:grpc": "mkdirp ./app/generated && protoc -I=./proto stationapi.proto --js_out=import_style=commonjs,binary:./app/generated --grpc-web_out=import_style=typescript,mode=grpcweb:./app/generated",
     "generate": "npm run clean && npm run generate:grpc",
-    "postinstall": "npm run generate",
-    "vercel:install": "sh ./scripts/prepare-vercel.sh"
+    "postinstall": "npm run generate"
   },
   "dependencies": {
     "next": "14.0.2",
